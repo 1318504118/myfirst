@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form>
+    用户名：<input type="text" name="username"> <br>
+    密码：<input type="text" name="password">  <br>
+    <button id="register">注册</button>
+    <button id="login">登陆</button>
+</form>
+<script>
+    const p = {
+        $: funcition (obj){
+            return document.querySelector(obj)
+        }
+    };
+
+    let oUsername = p.$('input[name=username]'),
+        oPassword = p.$('input[name=password]'),
+        oLogin = p.$('#login'),
+        oRegister = p.$('#register'),
+        aInfo = localStorage.info ? JSON.parse(localStorage.info):{};
+    // 注册
+    oRegister.addEventListener('click', function(e) {
+        let userV = oUsername.value,
+            passV = oPassword.value;
+        aInfo[userV] = {
+            username: userV,
+            password: passV
+        };
+        if (localStorage.info && !!JSON.parse(localStorage.info)[userV]) {
+            alert('用户名已存在！');
+        } else {
+            alert('注册成功！');
+            localStorage.info = JSON.stringify(aInfo);
+        }
+        e.preventDefault();
+    });
+
+    // 登陆
+    oLogin.addEventListener('click', function(e) {
+        let oInfo = JSON.parse(localStorage.info),
+            userV = oUsername.value,
+            passV = oPassword.value,
+            userInfo = oInfo[userV];        // 用户信息
+        // 验证用户是否存在
+        if (localStorage.info && !!userInfo) {
+            // 验证密码
+            if (passV == userInfo.password) {
+                alert('登陆成功！');
+            }
+        // 不存在
+        } else {
+            alert('用户不存在！')
+        }
+        e.preventDefault();
+    })
+</script>
+</body>
+</html>

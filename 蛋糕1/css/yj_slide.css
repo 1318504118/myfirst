@@ -1,0 +1,564 @@
+		.page{
+				height: 10000px;
+				overflow-x: scroll;
+			}
+			/*侧滑*/
+			.sidebar{
+				z-index: 2;
+				position: fixed;
+				width: 314px;
+				height: 100%;
+				top: 0;
+				right: -279px;
+				/*background: #202020;*/
+			}
+			.sidebar.in{			
+			}
+			/*清除浮动*/
+			.sidebar_child:after{
+				 content: '';
+				 display: block;
+				 clear: both;
+			}
+			.sidebar_child{
+				*zoom: 1;
+			} 
+			.account{
+				position: relative;
+				height: 40px;
+				width: 35px;
+			}
+			/*背景图标*/
+			.blank{
+				padding-top: 60px;
+			}
+			.account_icon{
+				position: relative;
+				left: 5.5px;
+				top: 8px;
+				height: 24px;
+				width: 24px;
+				background: url(../img/account.png);
+			}
+			.shopping_icon{
+				position: relative;
+				left: 5.5px;
+				top: 8px;
+				height: 24px;
+				width: 24px;
+				background: url(../img/cart.png);
+			}
+			.comment_icon{
+				position: relative;
+				left: 5.5px;
+				top: 8px;
+				height: 24px;
+				width: 24px;
+				background: url(../img/edit.png);
+			}
+			.code_icon{
+				position: relative;
+				left: 5.5px;
+				top: 8px;
+				height: 24px;
+				width: 24px;
+				background: url(../img/all.png);
+			}
+			.stick_icon{
+				position: relative;
+				left: 5.5px;
+				height: 24px;
+				width: 24px;
+				background: url(../img/less.png)
+			}
+			.shopping_font{
+				position: relative;
+				height: 80px;
+				width: 15px;
+				color: white;
+				left: 10px;
+				top: 20px;
+			}
+			.account:hover{
+					background-color: rgb(196,0,0);
+			}
+			.shopping:hover{
+					background-color: rgb(196,0,0);
+			}
+			.shopping{
+					width: 35px;
+					height: 151px;
+			}
+			.blank-xian{
+					position: relative;
+					display: block;
+					top: 0px;
+					width: 25px;
+					left:  5px;
+					right: 5px;
+					border:solid 1px #000000;
+					background: black;
+			}
+			.circle{
+				position: relative;
+				left: 8px;
+				top: 10px;
+				height:20px;
+				width: 20px;
+				background: rgb(196,0,0);
+				border-radius: 20px;
+			}
+			.figure{
+				color: white;
+				line-height: 20px;
+				text-align: center;
+			}
+			.comment{
+				position: relative;
+				top: 160px;
+				height: 40px;
+				width: 35px;
+			}
+			.comment,.account,.shopping,.code,.stick{
+				cursor: pointer;
+			}
+			.comment:hover{
+				background: rgb(196,0,0);
+			}
+			.code{
+				position: relative;
+				top: 180px;
+				height: 40px;
+				width: 35px;
+			}
+			.code:hover{
+				background: rgb(196,0,0);
+			}
+			.stick{
+				position: relative;
+				top: 190px;
+				text-align: center;
+				height: 40px;
+				width: 35px;
+			}
+			.stick:hover{
+				background: rgb(196,0,0);
+			}
+			.stick_font{
+				position: relative;
+				color: white;
+				bottom: 6px;
+			}
+			.my_profile,.message,.back_top{
+				text-align: center;
+				line-height: 40px;
+				background: #434343;
+				color: white;	
+				width: 100px;
+				position: relative;
+				top: -22px;
+				right: 100px;
+				display: none;
+				cursor:pointer
+			}
+			.account:hover .my_profile{
+				display: block;			
+			}
+			.comment:hover .message{
+				display: block;
+			}
+			.back_top{
+				top: -48px;
+			}
+			.stick:hover .back_top{
+				display: block;
+			}
+			.sidebar_left{
+				float: left;
+				background: #202020;
+				width: 35px;
+				height: 100%;
+			}
+	/*购物车栏*/
+		.sidebar_right{
+			display: block;
+			z-index: 1;                 
+			position: relative;         
+			float: left;                
+			width: 279px;               
+			height: 100%;               
+			/*background: red;*/        
+		}                               
+		.rigtht_title{                  
+			overflow: hidden;           
+			font: 14px;                 
+			background: #434343;        
+			color: #DDDDDD;             
+			text-align: center;         
+			padding: 10px 80px;         
+		}                               
+		/*双向右箭头*/                       
+		.jiantou{                       
+			position: absolute;         
+			left: 18px;                 
+			top:15px;                   
+			cursor: pointer;            
+			/*display: inline-block;*/  
+		}                               
+		.right_bottom{                  
+			/*background: #28A4C9;*/    
+			bottom: 0;                  
+			position: absolute;         
+			padding: 0px 9px;      
+			height: 99px;               
+			width: 279px;               
+		}
+		/*清除浮动*/
+		 .right_bottom_top:after{
+			 	content:'' ;
+			 	display: block;
+			 	clear: both;
+			 }                               
+		.right_bottom_top{              
+			font-size:16px ;            
+			/*line-height: 12px;*/      
+			height: 12px;               
+			width: 251px;               
+			color:#7c7c7c;              
+			padding: 15px 0;            
+		}                               
+		.right_bottom_top_left{         
+			float: left;                
+			max-width: 120px;           
+			overflow: hidden;           
+			white-space: nowrap;        
+			text-overflow: ellipsis;    
+		}                               
+		.right_bottom_top_right{        
+			float: right;               
+			max-width: 120px;           
+			overflow: hidden;           
+			white-space: nowrap;        
+			text-overflow: ellipsis;    
+		}                               
+		.right_bottom_bottom{           
+			width: 251px;
+			position: relative;
+			margin: 20px 10px;               
+			/*padding: 13px 0;  */          
+			font-size: 18px;            
+			height: 35px;               
+			line-height: 35px;
+			cursor: pointer;            
+			text-align: center;         
+			color: white;               
+			-webkit-border-radius:2px ; 
+			background: #e43a3d;        
+		}                               
+		.right_list{                    
+			position: absolute;         
+			background: #DDDDDD;		
+			width: 279px;               
+			top:40px;                   
+			bottom: 99px;               
+			overflow-x:hidden;          
+		}
+		/*登录注册*/
+			.account_login{
+				display: none;
+				background: #31B0D5;
+				/*z-index: ;*/
+				top: -22px;
+				position: absolute;
+				right:35px;
+				/*width: 343px;*/
+				height: 342px;
+				text-align: center;
+				padding: 0 41.5px;
+			}
+			.account_login_content{
+				width: 260px;
+			}
+			.account_login_content_blank{
+				height: 40px;
+				width: 100%;
+			}
+			.account_login_content_title{
+				text-align: left;
+			}
+			.account_login_content_line{
+				position: relative;
+				top: 10px;
+				background: rgb(233,233,233);
+				width: 100%;
+				height: 1px;
+			}
+			.account_login_content_left{
+				position: relative;
+				background: red;
+				height: 1px;
+				width: 45%;
+			}
+			.account_login_account,.account_login_password{
+				position: relative;
+				top: 25px;
+				height: 40px;
+				/*width: 100%;*/
+				background: white;
+			}
+			.account_login_password{
+				top: 45px;
+			}
+			.account_login_btn{
+				font-size: 18px;
+				cursor: pointer;
+				 position: relative;
+				 width: 100%;
+				 line-height: 44px;
+				 background: #f54f4f;
+				 height: 44px;
+				 top: 65px;
+			}
+			.free_register{
+				font-size: 14px;
+				cursor: pointer;
+				text-align: right;
+				position: relative;
+				top: 85px;
+			}
+			.free_register_go{
+				color: black;
+				text-decoration: none;
+			}
+			.account_login_account:after{
+				content: url(../img/账号.png);
+				position: absolute ;
+				/*background-image: ;*/
+				left: -1px;
+				top: 10px;
+				width: 40px;
+				display: block;
+			}
+			.account_login_password:after{
+				content: url(../img/钥匙.png);
+				position: absolute ;
+				/*background-image: ;*/
+				left: -1px;
+				top: 10px;
+				width: 40px;
+				display: block;
+			}
+			 .input_account{
+			  	font-size: 16px;
+			   	display: inline-block;
+			   	height: 40px;
+			   	width: 99%;
+			   	text-indent: 32px;
+			   }
+			   /*右边我的资料部分*/
+			  .sidebar_right2{
+			  	display: none;
+				position: relative;         
+				float: left;                
+				width: 279px;               
+				height: 100%;  
+				z-index: 4;
+			}
+			.right_account_message{
+				width: 100%;
+				top: 38px;
+				bottom: 56px;
+				position: absolute;
+				background-color: rgb(60,60,60);
+			}
+			.right_account_back{
+				font-size: 18px;
+				position: absolute;
+				/*left: 0px;*/
+				height: 56px;
+				bottom: 0px;
+				/*width: 100%;*/
+				padding: 6px;
+				background: rgb(60,60,60);
+			}
+			.right_account_back_btn{
+				color: white;
+				line-height:44px ;
+				text-align: center;
+				height: 44px;
+				cursor: pointer;
+				width: 267px;
+				background-color: #e43a3d;
+			}
+			.right_account_message_header{
+				/*text-align: center;*/
+				/*line-height: 110px;*/
+				position: relative;
+				height: 116px;
+				padding: 20px;
+			}
+			.right_account_list1,.right_account_list2,.right_account_list3{
+				color: whitesmoke;
+				position: relative;
+				height: 80xpx;
+				/*width: 100%;*/
+				padding: 10px;
+			}
+			.right_account_message_header_left{
+				    float: left;
+					position: relative;
+					width: 34%;
+					height: 116px;
+			}
+			.right_account_message_header_right{
+				    float: left;
+					position: relative;
+					width: 66%;
+					height: 116px;
+			}
+			.right_account_pic{
+				cursor: pointer;
+				position: relative;
+				top: 20%;
+				text-align: center;
+				line-height: 110px;
+				background-image:url(../img/link.jpg) ;
+				border-radius: 80px;
+				height: 80px;
+				width: 80px;
+			}
+			.right_account_member,.right_account_type{
+				color: #DDDDDD;
+				cursor:pointer;
+				left: 5px;
+				position: relative;
+				top: 30%;
+				display: block;
+			}
+			.right_account_type{
+				margin-top: 10px;
+			}
+			.account_name,.account_name_text,.account_email,.account_email_text,.account_number,.account_number_text{
+				position: relative;
+				left: 10px;
+				line-height: 30px;
+				display: block;
+			}
+			/*网页头部*/
+			.page_tab{
+				position: absolute;
+				height: 150px;
+				width: 100%;
+			}
+			.page_tab_top{
+				position: relative;
+				height: 100px;
+				width: 100%;
+			}
+			.page_tab_bottom{
+				background: black;
+				position: relative;
+				height: 50px;
+				width: 100%;
+			}
+			.page_tab_top_left{	
+				 float: left;
+				 position: relative;
+				 height: 100%;
+				 width: 30%;
+				/*background-image: no-repeat;*/
+			}
+			/*图片定位*/
+			.logo{
+					position: absolute;
+					margin: auto;
+					top: 0px;
+					bottom: 0px;
+					left: 0px;
+					right: 0px;
+				}
+			/*.page_tab_top_left_pic{
+				 height: 80px;
+				 background-image: url(img/logo.jpg);
+				 position: relative;
+				 margin: 2px auto;
+			}*/
+			.page_tab_top_right{
+				 float: left;
+				 position: relative;
+				 height: 100%;
+				 width: 70%;
+				 /*background-image: url(img/logo.jpg);*/
+			}
+			.page_tab_top_right_top{
+				position: relative;
+				left: 20px;
+				top: 20px;
+				width: 400px;
+				height: 40px;
+			}
+			.page_tab_top_right_bottom{
+				position: relative;
+				left: 20px;
+				top: 20px;
+				width: 400px;
+				height: 20px;
+			}
+			.page_tab_top_right_bottom_link1,.page_tab_top_right_bottom_link2,
+			.page_tab_top_right_bottom_link3,.page_tab_top_right_bottom_link4{
+				position: relative;
+				float: left;
+				margin-left: 20px;
+				cursor: pointer;
+				/*display: block;*/
+			}
+			.nav{
+				left: 10px;
+				position: relative;
+				top: 1px;
+				font-size: 20px;
+			}
+			a:hover{
+				background: #31B0D5;
+			}
+			 .nav>li>a:hover{
+			 	background-color:#31B0D5 ;
+			 }
+			 .title{
+			 	color: white;
+			 }
+			 /*滚动条*/
+			.animation{
+				display: none;
+				text-align: center;
+				line-height: 100px;
+				font-size: 20px;
+				width:100px;
+				height:100px;
+				border-radius: 20px;
+				background:#2AABD2;
+				position:relative;
+				animation:mymove 20s infinite;
+				animation-timing-function:linear;
+				animation-direction:alternate 20s;
+				/* Safari and Chrome */
+				-webkit-animation:mymove 20s infinite;
+				-webkit-animation-timing-function:linear;
+				-webkit-animation-direction: alternate 20s; 
+				}
+				
+				@keyframes mymove
+				{
+					0%{left: 0px;background: #28A4C9;color: yellow;height: 50px;width: 80px; line-height: 50px;font-size: 10px;}
+					50%{left: 100%;background: #67B168;color: red;height: 100px;width: 220px; line-height: 100px;font-size: 20px;}
+					75% {left:0px;background: greenyellow;color: blanchedalmond;height: 50px;width: 80px;line-height: 50px;font-size: 10px;}
+					100% {left:100%;background: red;color: cyan;height: 100px ; width: 220px;line-height: 100px;  font-size: 20px;}
+				}
+				
+				@-webkit-keyframes mymove /* Safari and Chrome */
+				{
+					0%{left: 0px;background: #28A4C9;color: yellow;height: 50px;width: 80px; line-height: 50px;font-size: 10px;}
+					50%{left: 100%;background: #67B168;color: red;height: 100px;width: 220px; line-height: 100px;font-size: 20px;}
+					75% {left:0px;background: greenyellow;color: blanchedalmond;height: 50px;width: 80px;line-height: 50px;font-size: 10px;}
+					100% {left:100%;background: red;color: cyan;height: 100px ; width: 220px;line-height: 100px;  font-size: 20px;}
+				}                               

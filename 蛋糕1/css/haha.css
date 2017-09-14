@@ -1,0 +1,112 @@
+/*网页头部*/
+			.page_tab{
+				position: absolute;
+				height: 150px;
+				width: 100%;
+			}
+			.page_tab_top{
+				position: relative;
+				height: 100px;
+				width: 100%;
+			}
+			.page_tab_bottom{
+				background: black;
+				position: relative;
+				height: 50px;
+				width: 100%;
+			}
+			.page_tab_top_left{
+				 float: left;
+				 position: relative;
+				 height: 100%;
+				 width: 30%;
+				 background-image: url(img/logo.jpg);
+			}
+			.page_tab_top_right{
+				 float: left;
+				 position: relative;
+				 height: 100%;
+				 width: 70%;
+				 /*background-image: url(img/logo.jpg);*/
+			}
+			.page_tab_top_right_top{
+				position: relative;
+				left: 20px;
+				top: 20px;
+				width: 400px;
+				height: 40px;
+			}
+			.page_tab_top_right_bottom{
+				position: relative;
+				left: 20px;
+				top: 20px;
+				width: 400px;
+				height: 20px;
+			}
+			.page_tab_top_right_bottom_link1,.page_tab_top_right_bottom_link2,
+			.page_tab_top_right_bottom_link3,.page_tab_top_right_bottom_link4{
+				position: relative;
+				float: left;
+				margin-left: 20px;
+				cursor: pointer;
+				/*display: block;*/
+			}
+			.nav{
+				left: 10px;
+				position: relative;
+				top: 1px;
+				font-size: 20px;
+			}
+			a:hover{
+				background: #31B0D5;
+			}
+			 .nav>li>a:hover{
+			 	background-color:#31B0D5 ;
+			 }
+			 .title{
+			 	color: white;
+			 }
+			 <!--网页头部-->
+			<div class="page_tab">
+				   <div class="page_tab_top">
+				   	   <div class="page_tab_top_left"></div>
+				   	   <div class="page_tab_top_right">
+				   	   		<div class="page_tab_top_right_top">
+				   	   			<div class="col-lg-6">
+								    <div class="input-group">
+								      <input type="text" class="form-control" placeholder="请输入你要搜索的内容">
+								      <span class="input-group-btn">
+								        <button class="btn btn-default" type="button">
+								        	 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+								        </button>
+								      </span>
+								    </div><!-- /input-group -->
+							  	</div><!-- /.col-lg-6 -->	
+				   	   		</div>
+				   	   		<div class="page_tab_top_right_bottom">
+				   	   			<div class="page_tab_top_right_bottom_link1">
+				   	   				奶油面包
+				   	   			</div>
+				   	   			<div class="page_tab_top_right_bottom_link2">
+				   	   				马卡龙
+				   	   			</div>
+				   	   			<div class="page_tab_top_right_bottom_link3">
+				   	   				芝士蛋糕
+				   	   			</div>
+				   	   			<div class="page_tab_top_right_bottom_link4">
+				   	   				咖啡
+				   	   			</div>
+				   	   		</div>
+				   	   </div>
+				   </div>
+				   <div class="page_tab_bottom">
+				   		<ul class="nav nav-pills">
+						  <li role="presentation" class=""><a href="#" class="title">首页</a></li>
+						  <li role="presentation"><a href="#" class="title">主推</a></li>
+						  <li role="presentation"><a href="#" class="title">咖啡/饮品</a></li>
+						  <li role="presentation"><a href="#" class="title">糕点</a></li>
+						  <li role="presentation"><a href="#" class="title">手工烘焙</a></li>
+						  <li role="presentation"><a href="#" class="title">会员登录</a></li> 
+						</ul>
+				   </div>
+			</div>

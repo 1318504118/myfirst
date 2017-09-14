@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form>
+    用户名：<input type="text" name="username"> <br>
+    密码：<input type="text" name="password">  <br>
+    <button id="register">注册</button>
+    <button id="login">登陆</button>
+</form>
+<script>
+    var oUsername = document.querySelector('input[name=username]'),
+        oPassword = document.querySelector('input[name=password]'),
+        oLogin = document.querySelector('#login'),
+        oRegister = document.querySelector('#register'),
+        oInfo = {};
+
+    // 注册
+    oRegister.addEventListener('click', function(e) {
+        oInfo = {
+          username: oUsername.value,
+          password: oPassword.value
+        };
+        localStorage.info = JSON.stringify(oInfo);
+        alert('注册成功');
+        e.preventDefault();
+    });
+
+    // 登陆
+    oLogin.addEventListener('click', function(e) {
+        oInfo = JSON.parse(localStorage.info);
+        if (oUsername.value === oInfo.username && oPassword.value === oInfo.password) {
+            alert('登陆成功 ')
+//            location.href = 'xx';
+        } else {
+            alert('用户名或密码有误');
+            return;
+        }
+        e.preventDefault();
+    })
+
+
+
+//    localStorage.info =
+</script>
+</body>
+</html>
